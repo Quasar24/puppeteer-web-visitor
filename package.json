@@ -5,16 +5,31 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "server": "node src/backend/server.js",
+    "frontend": "cd src/frontend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build": "cd src/frontend && npm run build",
+    "install-frontend": "cd src/frontend && npm install",
+    "postinstall": "npm run install-frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["puppeteer", "automation", "web-scraping", "stealth", "bot"],
+  "keywords": [
+    "puppeteer",
+    "automation",
+    "web-scraping",
+    "stealth",
+    "bot"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "puppeteer": "^24.12.1",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "socket.io": "^4.8.1"
   }
 }
